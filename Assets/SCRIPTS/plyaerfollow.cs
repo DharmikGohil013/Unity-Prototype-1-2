@@ -1,12 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class PLAYERCONTROLAER : MonoBehaviour
+public class plyaerfollow : MonoBehaviour
 {
-    public float speed = 5.0f;
-   
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +14,6 @@ public class PLAYERCONTROLAER : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.position = player.transform.position + new Vector3 (-0.12f , 7.42f, -8.55f);
     }
 }
