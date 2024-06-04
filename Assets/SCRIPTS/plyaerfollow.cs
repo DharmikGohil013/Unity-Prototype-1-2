@@ -5,6 +5,7 @@ using UnityEngine;
 public class plyaerfollow : MonoBehaviour
 {
     public GameObject player;
+    private Vector3 oofset = new Vector3(-0.12f, 7.42f, -8.55f);
     // Start is called before the first frame update
     void Start()
     {
@@ -12,8 +13,8 @@ public class plyaerfollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        transform.position = player.transform.position + new Vector3 (-0.12f , 7.42f, -8.55f);
+        transform.position = player.transform.position + oofset ;
     }
 }

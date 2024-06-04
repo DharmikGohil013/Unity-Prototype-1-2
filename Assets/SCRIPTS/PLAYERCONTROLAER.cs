@@ -5,7 +5,8 @@ using UnityEngine.UIElements;
 
 public class PLAYERCONTROLAER : MonoBehaviour
 {
-    public float speed = 0.0f;
+    public float speed = 5.0f;
+    public float turnspeed;
    
     // Start is called before the first frame update
     void Start()
@@ -16,11 +17,8 @@ public class PLAYERCONTROLAER : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            speed=speed + Time.deltaTime;
-
-        }
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        transform.Translate(Vector3.right* Time.deltaTime * turnspeed);
+      
     }
 }
