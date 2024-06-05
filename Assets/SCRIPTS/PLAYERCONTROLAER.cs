@@ -5,8 +5,12 @@ using UnityEngine.UIElements;
 
 public class PLAYERCONTROLAER : MonoBehaviour
 {
-    public float speed = 5.0f;
-    public float turnspeed;
+    //all speed and trun speed varibal
+
+    private float speed = 15.0f;
+    private float turnspeed=25.0f;
+    private float horzontolinput;
+    private float verttolinput;
    
     // Start is called before the first frame update
     void Start()
@@ -17,8 +21,12 @@ public class PLAYERCONTROLAER : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        transform.Translate(Vector3.right* Time.deltaTime * turnspeed);
+        //alll horijotol and vetical axis
+        horzontolinput = Input.GetAxis("Horizontal");
+        verttolinput = Input.GetAxis("Vertical");
+        //add transer
+        transform.Translate(Vector3.forward * speed * Time.deltaTime * verttolinput);
+        transform.Rotate(Vector3.up, Time.deltaTime * turnspeed * horzontolinput);
       
     }
 }
