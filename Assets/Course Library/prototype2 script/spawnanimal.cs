@@ -20,7 +20,7 @@ public class spawnanimal : MonoBehaviour
     void spawnrendomanimal()
     {
         int animalindex = Random.Range(0, spawn.Length);
-        Vector3 spawn2 = new Vector3(Random.Range(-15, 12), 0, 20);
+        Vector3 spawn2 = new Vector3(Random.Range(-14, 11), 0, 20);
         Instantiate(spawn[animalindex], spawn2, spawn[animalindex].transform.rotation);
     }
 }
