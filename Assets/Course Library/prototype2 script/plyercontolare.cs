@@ -6,6 +6,7 @@ public class plyercontolare : MonoBehaviour
 {
     public float hori;
     private float speed=20.0f;
+    public GameObject prefabfood;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,5 +26,10 @@ public class plyercontolare : MonoBehaviour
         }
         hori = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * Time.deltaTime*hori*speed);
+        if (Input.GetKeyDown(KeyCode.Space))
+        { 
+            Instantiate(prefabfood,transform.position,prefabfood.transform.rotation );
+        }
+
     }
 }
